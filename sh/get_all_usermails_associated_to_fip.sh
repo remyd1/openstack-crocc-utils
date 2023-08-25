@@ -1,13 +1,5 @@
 #!/bin/bash
 
-VERBOSE=FALSE
-
-if [ -n "$1" ]; then
-  if [[ "$1" == "-v" ]]; then
-    VERBOSE=TRUE
-  fi
-fi
-
 CUR_DIR="${pwd}"
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -33,7 +25,7 @@ for project in ${projects}; do
   for CUR_FIP in $CUR_FIPs; do
     for Email in $emails; do
       echo "| ${project} | ${CUR_FIP} | ${Email} |"
-	done
+	  done
   done
   echo "+------------------------------------------------------------------------------------------+"
 done
