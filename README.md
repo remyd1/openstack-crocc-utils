@@ -1,6 +1,6 @@
-# openstack-utils
+# openstack-crocc-utils
 
-Collection of basic useful scripts to manage an OpenStack cloud.
+Collection of basic useful scripts to manage an OpenStack cloud, `CrOcc`.
 
 Description:
   - `python/get_hypervisors.py`: get hypervisors basic informations,
