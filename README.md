@@ -1,6 +1,4 @@
-# crocc-utils
-
-_Author: Rémy Dernat_
+# openstack-utils
 
 Collection of basic useful scripts to manage an OpenStack cloud.
 
@@ -18,4 +16,6 @@ Description:
   - `sh/remove-orphan-networks-with-resources.sh`: remove orphan networks with associated resources (using `python/check_orphan_resources`),
   - `sh/list-all-secgroups.sh`: list all security groups (...),
   - `sh/list-all-projects.sh`: show all projects (...),
-  - `sh/list-crocc-users.sh`: list all users belonging to domains.
+  - `sh/list-crocc-users.sh`: list all users belonging to domains,
+  - `sh/get_all_usermails_associated_to_fip.sh`: list all FIP and users by projects,
+  - `sh/list-all-fips-by-project.sh`: list all FIP by projects.
