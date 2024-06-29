@@ -10,9 +10,9 @@ read -p 'Continue anyway ? [YyNn]' continue
 
 if [[ "${continue}" == [Yy]* ]]; then 
     sudo apt-get install -y libvirt-clients
-    CPU_TOTAL=`lscpu |awk  '/^CPU\(s\):/ {print $2}'`
+    CPU_TOTAL=$(lscpu |awk  '/^CPU\(s\):/ {print $2}')
     # vcpu.current or vcpu.maximum ?
-    CPU_CURR_MAXUSED=`virsh domstats --list-active --vcpu | awk -F= 'BEGIN{total=0;} {if ($1 ~ "maximum") {total+=$2;}}; END{print total;}'`
-    USAGE=`echo "${CPU_CURR_MAXUSED}/${CPU_TOTAL}" |bc -l`
+    CPU_CURR_MAXUSED=$(virsh domstats --list-active --vcpu | awk -F= 'BEGIN{total=0;} {if ($1 ~ "maximum") {total+=$2;}}; END{print total;}')
+    USAGE=$(echo "${CPU_CURR_MAXUSED}/${CPU_TOTAL}" |bc -l)
     echo $USAGE
 fi
