@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e
+set -e
 
 usage() {
 	echo -e "Usage: \n$0 -i <instance name> -I <image name> -p <privnet network name> \

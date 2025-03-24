@@ -4,7 +4,15 @@
 
 set -ex
 
-# basculer sur `openstack resource provider usage show ....`
+#################################################################
+# basculer sur `openstack resource provider ....`
+# openstack resource provider list
+# puis
+# openstack resource provider inventory list <uuid>
+# ou, moins precis :
+# openstack resource provider usage show <uuid>
+# openstack resource provider list -c uuid -c name -f value | while read -r line ; do UUID=$(echo ${line}|cut -d ' ' -f1); NAME=$(echo ${line}|cut -d ' ' -f2); echo "${NAME}" && openstack resource provider inventory list "${UUID}"; done
+#################################################################
 
 usage="$0 [-p] [hypervisor|--fip]\n
   [--compute=<compute>|-c=<compute>] hypervisor name. Optional. Without it, it will retrieve the current load of all the hypervisors.\n
